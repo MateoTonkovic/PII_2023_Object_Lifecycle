@@ -19,9 +19,14 @@ namespace ConsoleApplication
         /// </summary>
         public static void Main()
         {
-            var train = new Train();
-            train.StartEngines();
-            Console.WriteLine("Hello World!");
+            Train t1 = new Train("Last Train To London");
+            Train t2 = new Train("Last Train To London");
+            Train t3 = new Train("Runaway Train");
+
+            Console.WriteLine(t1 == t2);
+            Console.WriteLine(t3 == t2);
+
+            // En los dos casos las comparación es falsa, ya que son dos objetos diferentes
         }
     }
 }

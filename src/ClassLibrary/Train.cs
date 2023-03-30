@@ -13,6 +13,11 @@ namespace ClassLibrary
     /// </summary>
     public class Train
     {
+
+        private static int count { get; set; } = 0;
+
+        public string id { get; set; }
+
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
@@ -25,6 +30,20 @@ namespace ClassLibrary
         /// <returns>
         /// <c>true</c> si las máquinas pueden ser encendidas, <c>false</c> en caso contrario.
         /// </returns>
+
+        public Train(string id)
+        {
+            Console.WriteLine("Se creo una instancia de Train");
+            Train.count++;
+            Console.WriteLine(Train.count);
+            this.id = id;
+        }
+
+        ~Train()
+        {
+            Train.count--;
+        }
+
         public bool StartEngines()
         {
             if (this.IsEngineStarted)
